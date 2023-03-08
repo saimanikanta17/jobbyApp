@@ -1,0 +1,36 @@
+.job-card {
+  padding: 10px;
+  background-color: #272727;
+  color: #f8fafc;
+  border-radius: 10px;
+  margin: 10px;
+}
+.company-card {
+  display: flex;
+  align-items: center;
+}
+.rating-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 35px;
+}
+.employment-card {
+  display: flex;
+}
+.logo {
+  height: 60px;
+  width: 60px;
+}
+.title {
+  margin: 0px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.title-card {
+  line-height: 1;
+}
+.link-item {
+  text-decoration: none;
+  color: #f8fafc;
+}

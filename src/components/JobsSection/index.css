@@ -1,0 +1,22 @@
+.job-container {
+  background-color: #000000;
+  min-height: 100vh;
+}
+.job-list-container {
+  padding: 0px;
+  list-style: none;
+}
+.sub-container {
+  display: flex;
+  color: #ffffff;
+}
+.left-container {
+  width: 40%;
+}
+.profile-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  background-size: cover;
+  width: 250px;
+  padding: 10px;
+  color: #6366f1;
+}

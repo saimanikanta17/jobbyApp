@@ -1,0 +1,26 @@
+.home-card {
+  height: 100vh;
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-sm-bg.png');
+  background-size: cover;
+  color: #ffffff;
+}
+.find-btn {
+  width: 100px;
+  height: 34px;
+  color: #f8fafc;
+  background-color: #4f46e5;
+  border-style: none;
+  border-radius: 6px;
+  margin-right: 60px;
+  font-size: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .home-card {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  }
+  .sub-card {
+    padding: 20px;
+    width: 600px;
+  }
+}

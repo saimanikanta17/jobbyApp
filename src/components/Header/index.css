@@ -1,0 +1,39 @@
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 200px;
+    width: 50px;
+  }
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    justify-content: space-between;
+    padding: 15px;
+    color: #f1f5f9;
+    background-color: #272727;
+    font-family: 'Roboto';
+  }
+  .links-card {
+    font-size: 20px;
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+  }
+  .links {
+    text-decoration: none;
+    color: #f1f5f9;
+  }
+  .logout-btn {
+    width: 100px;
+    height: 34px;
+    color: #f8fafc;
+    background-color: #4f46e5;
+    border-style: none;
+    border-radius: 6px;
+    margin-right: 60px;
+    font-size: 16px;
+  }
+  .sm-card {
+    display: none;
+  }
+}
