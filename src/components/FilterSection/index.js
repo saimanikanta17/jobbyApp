@@ -52,7 +52,7 @@ const FilterSection = () => {
       <ul className="filter-container">
         {employmentTypesList.map(eachType => (
           <li>
-            <label key={eachType.employmentTypeId}>
+            <label key={eachType.label}>
               <input
                 type="checkbox"
                 value={eachType.employmentTypeId}
@@ -67,7 +67,7 @@ const FilterSection = () => {
       <ul className="filter-container">
         {salaryRangesList.map(eachRange => (
           <li>
-            <label key={eachRange.salaryRangeId}>
+            <label key={eachRange.label}>
               <input
                 type="radio"
                 name="salary-range"

@@ -22,7 +22,7 @@ const JobItem = props => {
         <div className="company-card">
           <img className="logo" src={companyLogoUrl} alt="company logo" />
           <div className="title-card">
-            <p className="title">{title}</p>
+            <h1 className="title">{title}</h1>
             <div className="rating-card">
               <AiFillStar fill=" #fbbf24" size="20px" />
               <p>{rating}</p>
