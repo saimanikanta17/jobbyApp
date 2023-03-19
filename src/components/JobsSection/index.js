@@ -108,7 +108,7 @@ class JobsSection extends Component {
   }
 
   renderLoadingView = () => (
-    <div className="loader-container" testid="loader">
+    <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -174,7 +174,7 @@ class JobsSection extends Component {
   }
 
   renderProfileLoadingView = () => (
-    <div className="loader-container" testid="loader">
+    <div className="loader-container" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
@@ -209,7 +209,7 @@ class JobsSection extends Component {
           <div>
             <div>
               <input type="search" />
-              <button type="button" testid="searchButton">
+              <button type="button" data-testid="searchButton">
                 <BsSearch className="search-icon" />
               </button>
             </div>
