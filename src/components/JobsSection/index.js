@@ -27,7 +27,7 @@ class JobsSection extends Component {
     apiStatus: apiStatusConstants.initial,
     profileStatus: apiStatusConstants.initial,
     profileData: {},
-    employment: '',
+    employmentList: [],
     salary: '',
     search: '',
   }
@@ -35,6 +35,36 @@ class JobsSection extends Component {
   componentDidMount() {
     this.getJobsList()
     this.getProfile()
+  }
+
+  salaryRange = range => {
+    this.setState({
+      search: range,
+    })
+  }
+
+  employmentString = (checked, type) => {
+    if (checked) {
+      this.setState(prevState => ({
+        employmentList: [...prevState.employmentList, type],
+      }))
+    } else {
+      const {employmentList} = this.state
+      const filteredList = employmentList.filter(each => each !== type)
+      this.setState({
+        employmentList: filteredList,
+      })
+    }
+  }
+
+  searchText = event => {
+    this.setState({
+      search: event.target.value,
+    })
+  }
+
+  searchBtn = () => {
+    this.getJobsList()
   }
 
   getProfile = async () => {
@@ -70,7 +100,8 @@ class JobsSection extends Component {
   }
 
   getJobsList = async () => {
-    const {employment, search, salary} = this.state
+    const {employmentList, search, salary} = this.state
+    const employment = employmentList.join(',')
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
@@ -115,6 +146,19 @@ class JobsSection extends Component {
 
   renderJobsView = () => {
     const {jobsList} = this.state
+    const noJobs = jobsList.length === 0
+    if (noJobs) {
+      return (
+        <div>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
+            alt="no jobs"
+          />
+          <h1>No Jobs Found</h1>
+          <p>We could not find any jobs. Try other filters</p>
+        </div>
+      )
+    }
     return (
       <ul className="job-list-container">
         {jobsList.map(jobDetail => (
@@ -204,12 +248,19 @@ class JobsSection extends Component {
         <div className="sub-container">
           <div className="left-container">
             {this.renderProfile()}
-            <FilterSection />
+            <FilterSection
+              employmentString={this.employmentString}
+              salaryRange={this.salaryRange}
+            />
           </div>
           <div>
             <div>
-              <input type="search" />
-              <button type="button" data-testid="searchButton">
+              <input type="search" onChange={this.searchText} />
+              <button
+                type="button"
+                onClick={this.searchBtn}
+                data-testid="searchButton"
+              >
                 <BsSearch className="search-icon" />
               </button>
             </div>
