@@ -56,6 +56,9 @@ class JobItemDetails extends Component {
   })
 
   getJobsData = async () => {
+    this.setState({
+      apiStatus: apiStatusConstants.inProgress,
+    })
     const {match} = this.props
     const {params} = match
     const {id} = params

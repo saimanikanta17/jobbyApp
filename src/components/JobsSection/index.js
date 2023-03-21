@@ -38,22 +38,31 @@ class JobsSection extends Component {
   }
 
   salaryRange = range => {
-    this.setState({
-      search: range,
-    })
+    this.setState(
+      {
+        salary: range,
+      },
+      this.getJobsList,
+    )
   }
 
   employmentString = (checked, type) => {
     if (checked) {
-      this.setState(prevState => ({
-        employmentList: [...prevState.employmentList, type],
-      }))
+      this.setState(
+        prevState => ({
+          employmentList: [...prevState.employmentList, type],
+        }),
+        this.getJobsList,
+      )
     } else {
       const {employmentList} = this.state
       const filteredList = employmentList.filter(each => each !== type)
-      this.setState({
-        employmentList: filteredList,
-      })
+      this.setState(
+        {
+          employmentList: filteredList,
+        },
+        this.getJobsList,
+      )
     }
   }
 
